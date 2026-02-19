@@ -124,7 +124,7 @@ This analysis will:
 | Attendance Rate | ~0.00 | None |
 | Sleep Hours | **0.000** | None |
 
-**Why It Matters**: When students ask *"What's the most important thing I can do to improve my grades?"* — the data is clear: **study time matters**, while sleep hours and attendance alone (without study context) don't predict performance.
+**Why It Matters**: When students ask *"What's the most important thing I can do to improve my grades?"* the data is clear: **study time matters**, while sleep hours and attendance alone (without study context) don't predict performance.
 
 ### **Finding 2: Attendance Modifies Study Impact**
 
@@ -133,7 +133,7 @@ This analysis will:
 - The relationship between study hours and exam scores **changes depending on attendance levels**
 - Students with **high attendance** get more "bang for their buck" from each hour studied
 
-**Why It Matters**: **Showing up to class amplifies the effectiveness of studying**. This means attendance policies aren't just about being present—they directly impact how well study time translates to results.
+**Why It Matters**: **Showing up to class amplifies the effectiveness of studying**. This means attendance policies aren't just about being present they directly impact how well study time translates to results.
 
 ### **Finding 3: The "Sweet Spot" for Student Success**
 
@@ -151,8 +151,6 @@ This analysis will:
 - **Tukey HSD confirms**: High Study Only and High Both groups score **significantly higher** than Low Both and High Sleep Only groups
 
 **Why It Matters**: **Study time drives success, not sleep alone**. Students who study a lot score ~3 points higher regardless of whether they sleep a lot. However, the **High Both group is the largest** (high study + high sleep), suggesting successful students tend to maintain both habits.
-
----
 
 ### **Finding 4: What Predicts Success Most? (Ranked)**
 
