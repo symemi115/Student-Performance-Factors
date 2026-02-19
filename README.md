@@ -113,3 +113,109 @@ This analysis will:
 - Provide data-driven insights for students and educators
 
 ## Key Findings
+
+### **Finding 1: Study Hours Are the Strongest Individual Predictor**
+
+**What We Found**: Hours studied explained **19.8%** (R² = 0.198) of the variance in exam scores, making it the only meaningful individual predictor. In contrast:
+
+| Predictor | R² Value | Predictive Power |
+|-----------|----------|------------------|
+| Hours Studied | **0.198** | Moderate |
+| Attendance Rate | ~0.00 | None |
+| Sleep Hours | **0.000** | None |
+
+**Why It Matters**: When students ask *"What's the most important thing I can do to improve my grades?"* — the data is clear: **study time matters**, while sleep hours and attendance alone (without study context) don't predict performance.
+
+### **Finding 2: Attendance Modifies Study Impact**
+
+**What We Found**: While attendance alone doesn't predict scores, it plays a crucial **moderating role**. The interaction effect shows that:
+
+- The relationship between study hours and exam scores **changes depending on attendance levels**
+- Students with **high attendance** get more "bang for their buck" from each hour studied
+
+**Why It Matters**: **Showing up to class amplifies the effectiveness of studying**. This means attendance policies aren't just about being present—they directly impact how well study time translates to results.
+
+### **Finding 3: The "Sweet Spot" for Student Success**
+
+**What We Found**: Students were grouped into four categories based on study hours and sleep:
+
+| Group | Number of Students | Average Score | vs. "Low Both" |
+|-------|-------------------|---------------|-----------------|
+| **High Both** (Study + Sleep) | 1,116 | **68.74** | +**2.73**  |
+| **High Study Only** | 1,838 | **68.76** | +**2.75**  |
+| **High Sleep Only** | 1,294 | **65.88** | +**0.13**  |
+| **Low Both** | 2,130 | **65.75** | — |
+
+**Statistical Significance**:
+- **ANOVA F-statistic** = 308.39, p < 0.001
+- **Tukey HSD confirms**: High Study Only and High Both groups score **significantly higher** than Low Both and High Sleep Only groups
+
+**Why It Matters**: **Study time drives success, not sleep alone**. Students who study a lot score ~3 points higher regardless of whether they sleep a lot. However, the **High Both group is the largest** (high study + high sleep), suggesting successful students tend to maintain both habits.
+
+---
+
+### **Finding 4: What Predicts Success Most? (Ranked)**
+
+**What We Found**: When comparing all factors, here's how they rank by correlation with exam scores:
+
+| Rank | Factor | Correlation (r) | Strength |
+|:----:|--------|:---------------:|----------|
+| 1 | **Attendance** | **0.58** | Strong |
+| 2 | **Hours Studied** | **0.45** | Moderate |
+| 3 | Previous Scores | 0.16 | Weak |
+| 4 | Tutoring Sessions | 0.03 | Very Weak |
+| 5 | Physical Activity | 0.02 | Very Weak |
+| 6 | Sleep Hours | -0.02 | None |
+
+**Why It Matters**: This reveals something fascinating! While **Hours Studied** was the best individual predictor in regression (Finding 1), **Attendance actually has a stronger correlation** with exam scores (0.58 vs 0.45). This tells us:
+
+- Attendance and study hours work **together** (as we saw in Finding 2)
+- Students who attend class regularly also tend to study more
+- **Attendance might be a "gateway behavior"** that enables effective studying
+
+## Visual Summary
+
+### Figure 1: Correlation Matrix
+![Correlation Matrix](Images/correlation_heatmap.png)
+*Figure 1: Correlation matrix showing relationships between all numerical variables*
+
+### Figure 2: Group Comparison
+![Group Comparison](Images/group_comparison.png)
+*Figure 2: Exam scores across different study-sleep groups*
+
+### Figure 3: Predictor Ranking
+![Predictor Importance](Images/predictor_ranking.png)
+*Figure 3: Ranking of predictors by correlation strength with exam scores*
+
+## Quick Summary Table
+
+| Finding | Key Insight | Business Requirement | Impact |
+|---------|-------------|---------------------|--------|
+| **1** | Study hours explain 19.8% of score variance; sleep alone predicts nothing | BR1 |  High |
+| **2** | Attendance amplifies study effectiveness | BR3 |  High |
+| **3** | High study time = +2.7 points; High Both group is largest | BR2, BR4 |  High |
+| **4** | Attendance (r=0.58) and Study Hours (r=0.45) are top predictors | BR1, BR3 |  High |
+
+
+## Actionable Recommendations
+
+Based on these findings, we recommend:
+
+| For | Recommendation | Evidence |
+|-----|----------------|----------|
+| **Students** | Prioritize **20+ weekly study hours** AND **attend class regularly** | Findings 1, 2, 3 |
+| **Teachers** | Track attendance closely—it identifies engaged students | Finding 4 |
+| **Schools** | Communicate that **attendance makes studying more effective** | Finding 2 |
+| **Parents** | Encourage consistent study routines over "cramming" | Finding 3 |
+| **Counselors** | Target students with low attendance for early intervention | Finding 4 |
+
+##  Business Requirements Met
+
+| Business Requirement | Status | Evidence |
+|---------------------|--------|----------|
+| BR1: Identify Key Performance Drivers | YES | Attendance (r=0.58) and Study Hours (r=0.45) identified |
+| BR2: Quantify Optimal Study-Sleep Balance | YES | High Both group (68.74) vs Low Both (65.75) |
+| BR3: Develop Predictive Understanding |YES | Combined model shows attendance moderates study impact 
+| BR4: Generate Actionable Student Profiles | YES| Four distinct groups with clear performance differences |
+| BR5: Inform Educational Policy Recommendations | YES | 5 actionable recommendations provided |
+
