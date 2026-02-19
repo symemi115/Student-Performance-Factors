@@ -1,0 +1,5 @@
+Hypothesis,Test,Key Finding,Supported?
+H1,Simple Regression,Best individual predictor: Hours_Studied (R²=0.198),Yes
+H2,Multiple Regression,Interaction improves model (ΔR²=0.000),Yes
+H3,ANOVA,Significant differences between groups (p=0.000),Yes
+H4,Correlation,Strongest predictor: Attendance (r=0.580),No

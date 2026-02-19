@@ -12,6 +12,42 @@
 ## Project Overview
 This data analytics project investigates the factors that influence student academic performance, specifically examining which variables most strongly predict exam scores. Using a comprehensive dataset of student attributes including study habits, attendance patterns, and lifestyle factors, this study tests four interconnected hypotheses about academic success.
 
+## Business Requirements
+***BR1: Identify Key Performance Drivers***
+- Requirement: Determine which student behaviors and characteristics have the strongest statistical relationship with exam performance.
+
+- Business Value: Schools and educational institutions can allocate resources (tutoring, counseling, intervention programs) to the factors that matter most.
+
+- Acceptance Criteria: Clear ranking of predictors with correlation coefficients and statistical significance levels.
+
+***BR2: Quantify Optimal Study-Sleep Balance***
+- Requirement: Establish evidence-based thresholds for optimal study hours and sleep duration that maximize exam scores.
+
+- Business Value: Enable schools to provide specific, data-backed recommendations to students about healthy study habits.
+
+- Acceptance Criteria: Identification of "sweet spot" combinations with confidence intervals and group comparison results.
+
+***BR3: Develop Predictive Understanding***
+- Requirement: Create a statistical model that can predict student exam performance based on behavioral and demographic factors.
+
+- Business Value: Early identification of at-risk students who may need additional support before exams.
+
+- Acceptance Criteria: Model with R² > 0.5 and identification of key predictive features.
+
+***BR4: Generate Actionable Student Profiles***
+- Requirement: Segment students into meaningful groups based on study habits and performance patterns.
+
+- Business Value: Personalized recommendations and interventions for different student types (e.g., "high potential, low effort" vs. "high effort, low results").
+
+- Acceptance Criteria: Clear, interpretable student segments with distinct characteristics and performance outcomes.
+
+***BR5: Inform Educational Policy Recommendations***
+- Requirement: Provide data-driven recommendations for school policies around homework load, scheduling, and wellness programs.
+
+- Business Value: Evidence-based decision making for administrators and education policymakers.
+
+- Acceptance Criteria: Concrete, actionable recommendations derived from statistical findings.
+
 ## Research Questions & Hypotheses:
 #### **H1: Individual Impact**
 - Hours studied explains more variance in exam scores than attendance rate or sleep hours when analyzed separately.
@@ -76,3 +112,4 @@ This analysis will:
 - Reveal if there's a "sweet spot" threshold for study and sleep
 - Provide data-driven insights for students and educators
 
+## Key Findings
