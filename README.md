@@ -1,72 +1,78 @@
 # ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-## Template Instructions
+# **Student Performance Analysis: What Really Affects Exam Scores?**
 
-Welcome,
+![Power BI](https://img.shields.io/badge/Power%20BI-F2C811?style=for-the-badge&logo=power%20bi&logoColor=black)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)
 
-This is the Code Institute student template for the Data Analytics capstone project. We have preinstalled all of the tools you need to get started. It's perfectly okay to use this template as the basis for your project submissions. Click the `Use this template` button above to get started.
+##  **Live Dashboard**
 
-You can safely delete the Template Instructions section of this README.md file and modify the remaining paragraphs for your own project. Please do read the Template Instructions at least once, though! It contains some important information about the IDE and the extensions we use.
+## Project Overview
+This data analytics project investigates the factors that influence student academic performance, specifically examining which variables most strongly predict exam scores. Using a comprehensive dataset of student attributes including study habits, attendance patterns, and lifestyle factors, this study tests four interconnected hypotheses about academic success.
 
-## How to use this repo
+## Research Questions & Hypotheses:
+#### **H1: Individual Impact**
+- Hours studied explains more variance in exam scores than attendance rate or sleep hours when analyzed separately.
+Analytical Approach = Simple linear Regression
 
-1. Use this template to create your GitHub project repo. Click the **Use this template** button, then click **Create a new repository**.
+#### **H2: 2: Combined Effects**
+- The combination of hours studied AND attendance rate predicts exam scores better than either variable alone.
+Analyticial Approach = Multiple regression with interaction.
 
-1. Copy the URL of your repository to your clipboard.
+#### **H3: Threshold Success**
+- Students who study more than 20 hours per week AND get more than 7 hours of sleep score significantly higher than those meeting only one or neither threshold.
+Analytical Approach = ANOVA/ Group Comparison.
 
-1. In VS Code, select **File** -> **Open Folder**.
+#### **H4: Variable Comparison**
+- Hours studied has the strongest correlation with exam scores among all continuous variables in the dataset.
+Analytical Approach = Correlation Matrix Analysis.
 
-1. Select your `vscode-projects` folder, then click the **Select Folder** button on Windows, or the **Open** button on Mac.
+## **DataSet**
+Source: Student Performance Factors (https://www.kaggle.com/datasets/lainguyn123/student-performance-factors) - Kaggle
 
-1. From the top menu in VS Code, select **Terminal** > **New Terminal** to open the terminal.
+**Decsription**:  This dataset contains information on student demographics, study habits, parental involvement, and academic performance metrics.
 
-1. In the terminal, type `git clone` followed by the URL of your GitHub repository. Then hit **Enter**. This command will download all the files in your GitHub repository into your vscode-projects folder.
+***Key Features:***
+- Hours Studied
+- Attendance Rate
+- Sleep Hours
+- Previous Scores
+- Extracurricular Activities
+- Exam Score (Target Variable)
 
-1. In VS Code, select **File** > **Open Folder** again.
+## Methodology
 
-1. This time, navigate to and select the folder for the project you just downloaded. Then, click **Select Folder**.
+1. ***Data Cleaning & Preprocessing***:
+- Handle missing values
+- Check for outliers
+- Convert data types
+- Feature engineering (creating threshold groups for H3)
 
-1. A virtual environment is necessary when working with Python projects to ensure each project's dependencies are kept separate from each other. You need to create your virtual environment, also called a venv, and then ensure that it is activated any time you return to your workspace.
-Click the gear icon in the lower left-hand corner of the screen to open the Manage menu and select **Command Palette** to open the VS Code command palette.
+2. ***Exploratory Data Analysis (EDA)***:
+- Summary statistics
+- Distribution visualizations
+- Initial correlation exploration
 
-1. In the command palette, type: *create environment* and select **Python: Create Environment…**
+3. ***Hypothesis Testing***:
+- H1: Three simple linear regressions comparing R² values
+- H2: Multiple regression with interaction term
+- H3: Group comparisons using ANOVA/t-tests
+- H4: Comprehensive correlation analysis with heatmap visualisation.
 
-1. Choose **Venv** from the dropdown list.
+## Technologies Used
+- Python (Recommended)
+- Pandas (data manipulation)
+- NumPy (numerical operations)
+- Matplotlib/Seaborn (visualisations)
+- SciPy/StatsModels (statistical testing)
+- Scikit-learn (regression modeling)
 
-1. Choose the Python version you installed earlier. Currently, we recommend Python 3.12.8
+## Expected Outcomes
+This analysis will:
+- Identify the strongest predictors of academic success
+- Determine whether study hours alone matter more than combination factors
+- Reveal if there's a "sweet spot" threshold for study and sleep
+- Provide data-driven insights for students and educators
 
-1. **DO NOT** click the box next to `requirements.txt`, as you need to do more steps before you can install your dependencies. Click **OK**.
-
-1. You will see a `.venv` folder appear in the file explorer pane to show that the virtual environment has been created.
-
-1. **Important**: Note that the `.venv` folder is in the `.gitignore` file so that Git won't track it.
-
-1. Return to the terminal by clicking on the TERMINAL tab, or click on the **Terminal** menu and choose **New Terminal** if no terminal is currently open.
-
-1. In the terminal, use the command below to install your dependencies. This may take several minutes.
-
- ```console
- pip3 install -r requirements.txt
- ```
-
-1. Open the `jupyter_notebooks` directory, and click on the notebook you want to open.
-
-1. Click the **kernel** button and choose **Python Environments**.
-
-Note that the kernel says `Python 3.12.8` as it inherits from the venv, so it will be Python-3.12.8 if that is what is installed on your PC. To confirm this, you can use the command below in a notebook code cell.
-
-```console
-! python --version
-```
-
-## Deployment Reminders
-
-* Set the `.python-version` Python version to a [Heroku-22](https://devcenter.heroku.com/articles/python-support#supported-runtimes) stack currently supported version that closest matches what you used in this project.
-* The project can be deployed to Heroku using the following steps.
-
-1. Log in to Heroku and create an App
-2. At the **Deploy** tab, select **GitHub** as the deployment method.
-3. Select your repository name and click **Search**. Once it is found, click **Connect**.
-4. Select the branch you want to deploy, then click **Deploy Branch**.
-5. The deployment process should happen smoothly if all deployment files are fully functional. Click the button **Open App** at the top of the page to access your App.
-6. If the slug size is too large, then add large files not required for the app to the `.slugignore` file.
