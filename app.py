@@ -3,8 +3,6 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
-from scipy import stats
-from scipy.stats import f_oneway
 import os
 
 # Page configuration
@@ -18,6 +16,7 @@ st.set_page_config(
 st.title("📊 Student Performance Analysis")
 st.markdown("### What Really Affects Exam Scores?")
 
+
 # Load data function
 @st.cache_data
 def load_data():
@@ -29,13 +28,14 @@ def load_data():
         'cleaned_student_data.csv',
         'StudentPerformanceFactors.csv'
     ]
-    
+
     for path in possible_paths:
         if os.path.exists(path):
             df = pd.read_csv(path)
             return df
     
     return None
+
 
 # Load the data
 df = load_data()
@@ -222,8 +222,8 @@ if df is not None:
             if len(numerical_df.columns) > 1:
                 fig, ax = plt.subplots(figsize=(12, 8))
                 corr_matrix = numerical_df.corr()
-                sns.heatmap(corr_matrix, annot=True, cmap='coolwarm', 
-                           center=0, square=True, fmt='.2f', ax=ax)
+                sns.heatmap(corr_matrix, annot=True, cmap='coolwarm',
+                            center=0, square=True, fmt='.2f', ax=ax)
                 ax.set_title('Correlation Matrix of All Numerical Variables')
                 st.pyplot(fig)
                 
@@ -372,8 +372,7 @@ else:
     - `Data/Raw/StudentPerformanceFactors.csv`
     - `cleaned_student_data.csv`
     
-    Current directory: """ + os.getcwd()
-    )
+    Current directory: """ + os.getcwd())
     
     # Show files in current directory for debugging
     st.write("Files in current directory:")
