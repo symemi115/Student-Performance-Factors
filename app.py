@@ -19,13 +19,12 @@ st.markdown("### What Really Affects Exam Scores?")
 
 @st.cache_data
 def load_data():
-    # Look for the data file in different possible locations
+    # Look for the data file in your actual folder structure
     possible_paths = [
-        'Data/cleaned_student_data.csv',
         'Data/Cleaned/cleaned_student_data.csv',
-        'Data/Raw/StudentPerformanceFactors.csv',
+        'Data/cleaned_student_data.csv',
         'cleaned_student_data.csv',
-        'StudentPerformanceFactors.csv'
+        'Data/Raw/StudentPerformanceFactors.csv'
     ]
     for path in possible_paths:
         if os.path.exists(path):
