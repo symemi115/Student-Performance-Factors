@@ -1,5 +1,6 @@
 # ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
+
 # **Student Performance Analysis: What Really Affects Exam Scores?**
 
 ![Power BI](https://img.shields.io/badge/Power%20BI-F2C811?style=for-the-badge&logo=power%20bi&logoColor=black)
@@ -8,10 +9,15 @@
 ![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)
 
 ##  **Live Dashboard**
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://student-performance-dashboard-72e6c195af16.herokuapp.com/)
 
 ## Project Overview
 This data analytics project investigates the factors that influence student academic performance, specifically examining which variables most strongly predict exam scores. Using a comprehensive dataset of student attributes including study habits, attendance patterns, and lifestyle factors, this study tests four interconnected hypotheses about academic success.
+## Live Demo
+ Explore the interactive dashboard yourself! Click the badge above or use this link:
+**[https://student-performance-dashboard-72e6c195af16.herokuapp.com/](https://student-performance-dashboard-72e6c195af16.herokuapp.com/)**
 
+ **Note:** The app is hosted on a free Heroku dyno, so it may take 10-15 seconds to "wake up" if it hasn't been accessed recently. Please be patient!
 ## Business Requirements
 ***BR1: Identify Key Performance Drivers***
 - Requirement: Determine which student behaviors and characteristics have the strongest statistical relationship with exam performance.
