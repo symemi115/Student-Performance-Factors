@@ -15,6 +15,8 @@ st.set_page_config(
 # Title
 st.title("📊 Student Performance Analysis")
 st.markdown("### What Really Affects Exam Scores?")
+
+
 # Load data function
 @st.cache_data
 def load_data():
@@ -36,6 +38,7 @@ def load_data():
                 return None
     return None
 
+
 # Load the data
 df = load_data()
 
@@ -43,7 +46,8 @@ if df is not None:
     # Data preprocessing
     df_clean = df.copy()
 
-    # Normalize column names: strip and replace spaces with underscores for consistency
+    # Normalize column names: strip and replace spaces with underscores
+    # for consistency
     df_clean.columns = [c.strip().replace(' ', '_') for c in df_clean.columns]
 
     # Convert categorical columns
@@ -59,7 +63,8 @@ if df is not None:
             df_clean[col] = df_clean[col].astype('category')
 
     # Create Study_Sleep_Group
-    if ('Hours_Studied' in df_clean.columns and 'Sleep_Hours' in df_clean.columns):
+    if ('Hours_Studied' in df_clean.columns and
+            'Sleep_Hours' in df_clean.columns):
         study_threshold = df_clean['Hours_Studied'].median()
         sleep_threshold = df_clean['Sleep_Hours'].median()
 
@@ -75,7 +80,8 @@ if df is not None:
             else:
                 return 'Low Both'
 
-        df_clean['Study_Sleep_Group'] = df_clean.apply(create_study_sleep_group, axis=1)
+        df_clean['Study_Sleep_Group'] = df_clean.apply(
+            create_study_sleep_group, axis=1)
 
     # Sidebar navigation
     st.sidebar.title("Navigation")
@@ -125,21 +131,36 @@ if df is not None:
 
         # Business Requirements & Hypotheses
         st.subheader("🎯 Business Requirements")
-        st.markdown("- **BR1**: Identify key performance drivers\n- **BR2**: Quantify optimal study-sleep balance")
+        st.markdown(
+            "- **BR1**: Identify key performance drivers\n"
+            "- **BR2**: Quantify optimal study-sleep balance"
+        )
 
         st.subheader("🔬 Research Hypotheses")
-        st.markdown("- **H1**: Hours studied explains more variance than attendance or sleep\n- **H3**: High study AND high sleep score higher")
+        st.markdown(
+            "- **H1**: Hours studied explains more variance than "
+            "attendance or sleep\n"
+            "- **H3**: High study AND high sleep score higher"
+        )
 
     elif page == "🔑 Key Findings":
         st.header("🔑 Key Findings")
 
-        with st.expander("Finding 1: Study Hours Dominate Predictors", expanded=True):
-            st.write("**What We Found**: Hours studied explained **19.8%** of the variance.")
+        with st.expander(
+            "Finding 1: Study Hours Dominate Predictors",
+            expanded=True
+        ):
+            st.write(
+                "**What We Found**: Hours studied explained "
+                "**19.8%** of the variance."
+            )
             fig, ax = plt.subplots(figsize=(8, 4))
-            # Display-friendly predictor names (these may differ from column names)
+            # Display-friendly predictor names
+            # (these may differ from column names)
             predictors = ['Hours Studied', 'Attendance', 'Sleep Hours']
             r2_values = [0.198, 0.00, 0.00]
-            ax.bar(predictors, r2_values, color=['#2E86AB', '#A23B72', '#A23B72'])
+            colors = ['#2E86AB', '#A23B72', '#A23B72']
+            ax.bar(predictors, r2_values, color=colors)
             st.pyplot(fig)
 
     elif page == "📈 Visualizations":
@@ -150,13 +171,23 @@ if df is not None:
             numerical_df = df_clean.select_dtypes(include=[np.number])
             if len(numerical_df.columns) > 1:
                 fig, ax = plt.subplots(figsize=(10, 6))
-                sns.heatmap(numerical_df.corr(), annot=True, cmap='coolwarm', ax=ax)
+                sns.heatmap(
+                    numerical_df.corr(),
+                    annot=True,
+                    cmap='coolwarm',
+                    ax=ax
+                )
                 st.pyplot(fig)
 
         with tab2:
             if 'Study_Sleep_Group' in df_clean.columns:
                 fig, ax = plt.subplots(figsize=(10, 6))
-                sns.boxplot(data=df_clean, x='Study_Sleep_Group', y='Exam_Score', ax=ax)
+                sns.boxplot(
+                    data=df_clean,
+                    x='Study_Sleep_Group',
+                    y='Exam_Score',
+                    ax=ax
+                )
                 st.pyplot(fig)
 
     elif page == "📊 Data Explorer":
@@ -164,7 +195,12 @@ if df is not None:
 
         # Simple Filter
         if 'Gender' in df_clean.columns:
-            gender_filter = st.multiselect("Filter by Gender", options=df_clean['Gender'].unique(), default=df_clean['Gender'].unique())
+            gender_options = df_clean['Gender'].unique()
+            gender_filter = st.multiselect(
+                "Filter by Gender",
+                options=gender_options,
+                default=gender_options
+            )
             df_filtered = df_clean[df_clean['Gender'].isin(gender_filter)]
             st.dataframe(df_filtered)
 
@@ -176,7 +212,12 @@ if df is not None:
             st.markdown('---')
         st.subheader("🔮 Simple Score Predictor")
         st.write("Based on the data, how might your hours affect your score?")
-        user_hours = st.number_input("Enter Study Hours Per Week", min_value=0, max_value=100, value=20)
+        user_hours = st.number_input(
+            "Enter Study Hours Per Week",
+            min_value=0,
+            max_value=100,
+            value=20
+        )
         # Simplified linear approximation based on your findings
         base_score = 55
         predicted = base_score + (user_hours * 0.5)
