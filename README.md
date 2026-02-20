@@ -7,6 +7,7 @@
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white)
 ![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)
+![Heroku App Status](https://img.shields.io/website?url=https%3A%2F%2Fstudent-performance-dashboard-72e6c195af16.herokuapp.com%2F&label=App%20Status) 
 
 ##  **Live Dashboard**
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://student-performance-dashboard-72e6c195af16.herokuapp.com/)
@@ -223,3 +224,44 @@ Based on these findings, we recommend:
 | BR4: Generate Actionable Student Profiles | YES| Four distinct groups with clear performance differences |
 | BR5: Inform Educational Policy Recommendations | YES | 5 actionable recommendations provided |
 
+## Skills Developed
+
+- **Statistical Analysis**: Hypothesis testing, regression analysis, ANOVA, correlation matrices
+- **Python Programming**: Pandas, NumPy, SciPy, StatsModels, Scikit-learn
+- **Data Visualization**: Matplotlib, Seaborn, Streamlit dashboard development
+- **Critical Thinking**: Translating business requirements into testable hypotheses
+- **Web Deployment**: Heroku deployment, Git version control, README documentation
+- **Research Communication**: Presenting complex findings to diverse audiences
+
+## **Acknowledgments**
+**Dataset:**
+- Source: [Student Performance Factors Dataset](https://www.kaggle.com/datasets/lainguyn123/student-performance-factors) on Kaggle
+- Creator: lainguyn123 (Kaggle user)
+- Description: Comprehensive dataset containing information on student demographics, study habits, parental involvement, and academic performance metrics
+- License: CC0: Public Domain
+
+**Inspiration & Learning:**
+- Streamlit documentation and community forums (dashboard development patterns)
+- Kaggle community notebooks (EDA and statistical analysis techniques)
+- Storytelling with Data (Cole Nussbaumer Knaflic) - dashboard layout and narrative principles
+- Statology.org (statistical testing methodology references)
+
+**Tools:**
+- Dashboard deployed on **Heroku** (free tier)
+- Interactive dashboard built with **Streamlit** (Python)
+- Analysis completed using: **Pandas, NumPy, Matplotlib, Seaborn, SciPy, StatsModels, Scikit-learn**
+- Development environment: Jupyter Notebook / VS Code
+- Version control: Git / GitHub
+- Documentation: Markdown
+
+**Technical Guidance & Support:**
+- Special thanks to **an AI assistant from DeepSeek** for real-time dashboard design consultation, statistical analysis guidance, and technical troubleshooting.
+- This included: interactive filter implementation, Streamlit app optimization, README documentation refinement, and deployment support.
+
+*This project was developed as a portfolio piece to demonstrate statistical analysis, Python programming, and data visualization capabilities.*
+
+I extend my sincere gratitude to **Code Institute** for providing comprehensive data analytics education that formed the foundation of this project. The skills and methodologies learned throughout the course were instrumental in developing this data-driven analysis.
+
+Special thanks to my tutors, **Vasilica Pavaloi** and **Mark Briscoe**, for their patient guidance and invaluable support in addressing numerous technical questions and challenges encountered during development.
+
+I also wish to acknowledge my **peers** for their collaborative spirit, motivation, and shared insights that significantly contributed to the successful completion of this work.
