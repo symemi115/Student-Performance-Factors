@@ -16,7 +16,7 @@ st.set_page_config(
 # -----------------------------
 # Title & intro
 # -----------------------------
-st.title("📊 Student Performance Analysis")
+st.title("Student Performance Analysis")
 st.markdown("### What Really Affects Exam Scores?")
 
 st.write(
@@ -137,7 +137,7 @@ if df is not None:
     # -----------------------------
     # Overview
     # -----------------------------
-    if page == "📋 Overview":
+    if page == "Overview":
         st.header("Project Overview")
 
         col1, col2, col3 = st.columns(3)
@@ -155,7 +155,7 @@ if df is not None:
         st.subheader("Data Sample")
         st.dataframe(df_view.head(10), use_container_width=True)
 
-        st.subheader("📌 High-Level Dataset Summary")
+        st.subheader("High-Level Dataset Summary")
         st.write(
             f"- **Rows:** {df_view.shape[0]}  \n"
             f"- **Columns:** {df_view.shape[1]}  \n"
@@ -163,13 +163,13 @@ if df is not None:
             "study habits, sleep, school environment, and family background."
         )
 
-        st.subheader("🎯 Business Requirements")
+        st.subheader("Business Requirements")
         st.markdown(
             "- **BR1:** Identify the key drivers of student performance.\n"
             "- **BR2:** Understand how study and sleep balance relate to exam scores.\n"
             "- **BR3:** Provide a simple way to estimate a student’s potential score."
         )
-        st.subheader("🔬 Research Hypotheses")
+        st.subheader("Research Hypotheses")
         st.markdown(
             "- **H1:** Hours studied explains more variance in exam "
             "scores than attendance or sleep.\n"
@@ -181,7 +181,7 @@ if df is not None:
     # Key Findings
     # -----------------------------
     elif page == "🔑 Key Findings":
-        st.header("🔑 Key Findings")
+        st.header("Key Findings")
 
         with st.expander(
             "Finding 1: Study Hours Are the Strongest Driver",
@@ -228,7 +228,7 @@ if df is not None:
     # Visualisations
     # -----------------------------
     elif page == "📈 Visualisations":
-        st.header("📈 Visualisations")
+        st.header("Visualisations")
 
         tab1, tab2 = st.tabs(["Correlation Matrix", "Study–Sleep Groups"])
 
@@ -274,7 +274,7 @@ if df is not None:
     # Data Explorer
     # -----------------------------
     elif page == "📊 Data Explorer":
-        st.header("📊 Explore the Data")
+        st.header("Explore the Data")
 
         # Extra filters
         df_explore = df_view.copy()
@@ -312,7 +312,7 @@ if df is not None:
     # Score Predictor
     # -----------------------------
     elif page == "🔮 Score Predictor":
-        st.header("🔮 Simple Score Predictor")
+        st.header("Simple Score Predictor")
         st.write(
             "This is a **simple, data-inspired tool** that estimates a student's exam score "
             "based mainly on their study hours (and optionally sleep). "
@@ -413,7 +413,7 @@ if df is not None:
     # About
     # -----------------------------
     elif page == "📝 About":
-        st.header("📝 About This Project")
+        st.header("About This Project")
         st.write("**Author:** Sadiyah")
         st.write("**Dataset:** Student Performance Factors (Kaggle)")
         st.write(
