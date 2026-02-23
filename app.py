@@ -20,13 +20,15 @@ st.title("📊 Student Performance Analysis")
 st.markdown("### What Really Affects Exam Scores?")
 
 st.write(
-    "This project explores which factors have the biggest impact on student exam scores, "
-    "with a focus on study hours, sleep, and other lifestyle and school-related variables."
+    "This project explores which factors have the biggest impact on "
+    "student exam scores, with a focus on study hours, sleep, and "
+    "other lifestyle and school-related variables."
 )
-
 # -----------------------------
 # Load data
 # -----------------------------
+
+
 @st.cache_data
 def load_data():
     cwd = Path(__file__).parent
@@ -77,7 +79,8 @@ if df is not None:
             df_clean[col] = df_clean[col].astype("category")
 
     # Create Study_Sleep_Group
-    if ("Hours_Studied" in df_clean.columns) and ("Sleep_Hours" in df_clean.columns):
+    if (("Hours_Studied" in df_clean.columns)
+            and ("Sleep_Hours" in df_clean.columns)):
         study_threshold = df_clean["Hours_Studied"].median()
         sleep_threshold = df_clean["Sleep_Hours"].median()
 
@@ -94,7 +97,8 @@ if df is not None:
             else:
                 return "Low Both"
 
-        df_clean["Study_Sleep_Group"] = df_clean.apply(create_study_sleep_group, axis=1)
+        df_clean["Study_Sleep_Group"] = df_clean.apply(
+            create_study_sleep_group, axis=1)
 
     # -----------------------------
     # Sidebar
@@ -116,8 +120,11 @@ if df is not None:
     # Optional global filter (example: gender)
     if "Gender" in df_clean.columns:
         st.sidebar.subheader("Quick Filter")
-        gender_options = df_clean["Gender"].cat.categories.tolist() \
-            if hasattr(df_clean["Gender"], "cat") else df_clean["Gender"].unique()
+        gender_options = (
+            df_clean["Gender"].cat.categories.tolist()
+            if hasattr(df_clean["Gender"], "cat")
+            else df_clean["Gender"].unique()
+        )
         selected_gender = st.sidebar.multiselect(
             "Filter by Gender",
             options=gender_options,
@@ -152,8 +159,8 @@ if df is not None:
         st.write(
             f"- **Rows:** {df_view.shape[0]}  \n"
             f"- **Columns:** {df_view.shape[1]}  \n"
-            "- Mix of numerical and categorical features related to study habits, "
-            "sleep, school environment, and family background."
+            "- Mix of numerical and categorical features related to "
+            "study habits, sleep, school environment, and family background."
         )
 
         st.subheader("🎯 Business Requirements")
@@ -162,11 +169,12 @@ if df is not None:
             "- **BR2:** Understand how study and sleep balance relate to exam scores.\n"
             "- **BR3:** Provide a simple way to estimate a student’s potential score."
         )
-
         st.subheader("🔬 Research Hypotheses")
         st.markdown(
-            "- **H1:** Hours studied explains more variance in exam scores than attendance or sleep.\n"
-            "- **H2:** Students with both high study hours and high sleep perform best.\n"
+            "- **H1:** Hours studied explains more variance in exam "
+            "scores than attendance or sleep.\n"
+            "- **H2:** Students with both high study hours and high sleep "
+            "perform best.\n"
         )
 
     # -----------------------------
@@ -175,14 +183,19 @@ if df is not None:
     elif page == "🔑 Key Findings":
         st.header("🔑 Key Findings")
 
-        with st.expander("Finding 1: Study Hours Are the Strongest Driver", expanded=True):
+        with st.expander(
+            "Finding 1: Study Hours Are the Strongest Driver",
+            expanded=True
+        ):
             st.write(
-                "**What we found:** Study hours show the strongest relationship with exam score "
-                "compared to other single factors like attendance or sleep."
+                "**What we found:** Study hours show the strongest "
+                "relationship with exam score compared to other single "
+                "factors like attendance or sleep."
             )
             fig, ax = plt.subplots(figsize=(8, 4))
             predictors = ["Hours Studied", "Attendance", "Sleep Hours"]
-            # Example R²-style values (you can adjust these to match your notebook)
+            # Example R²-style values
+            # (you can adjust these to match your notebook)
             r2_values = [0.20, 0.05, 0.03]
             colors = ["#2E86AB", "#A23B72", "#A23B72"]
             ax.bar(predictors, r2_values, color=colors)
@@ -190,11 +203,15 @@ if df is not None:
             ax.set_ylim(0, 0.25)
             st.pyplot(fig)
 
-        if "Study_Sleep_Group" in df_view.columns and "Exam_Score" in df_view.columns:
-            with st.expander("Finding 2: Study + Sleep Balance Matters", expanded=True):
+        if ("Study_Sleep_Group" in df_view.columns
+                and "Exam_Score" in df_view.columns):
+            with st.expander(
+                "Finding 2: Study + Sleep Balance Matters",
+                expanded=True
+            ):
                 st.write(
-                    "Students who manage **both** higher study hours and higher sleep "
-                    "tend to achieve the best scores overall."
+                    "Students who manage **both** higher study hours and "
+                    "higher sleep tend to achieve the best scores overall."
                 )
                 fig, ax = plt.subplots(figsize=(8, 4))
                 sns.boxplot(
@@ -228,11 +245,15 @@ if df is not None:
                 )
                 st.pyplot(fig)
             else:
-                st.info("Not enough numerical columns to show a correlation matrix.")
+                st.info(
+                    "Not enough numerical columns to show a "
+                    "correlation matrix."
+                )
 
         with tab2:
             st.subheader("Exam Score by Study–Sleep Group")
-            if "Study_Sleep_Group" in df_view.columns and "Exam_Score" in df_view.columns:
+            if ("Study_Sleep_Group" in df_view.columns
+                    and "Exam_Score" in df_view.columns):
                 fig, ax = plt.subplots(figsize=(10, 6))
                 sns.boxplot(
                     data=df_view,
@@ -244,7 +265,10 @@ if df is not None:
                 ax.set_ylabel("Exam Score")
                 st.pyplot(fig)
             else:
-                st.info("Study_Sleep_Group or Exam_Score not available in the dataset.")
+                st.info(
+                    "Study_Sleep_Group or Exam_Score not available in "
+                    "the dataset."
+                )
 
     # -----------------------------
     # Data Explorer
@@ -262,16 +286,24 @@ if df is not None:
                 options=school_options,
                 default=school_options,
             )
-            df_explore = df_explore[df_explore["School_Type"].isin(selected_school)]
+            df_explore = df_explore[
+                df_explore["School_Type"].isin(selected_school)
+            ]
 
         if "Parental_Involvement" in df_explore.columns:
-            involvement_options = df_explore["Parental_Involvement"].unique()
+            involvement_options = (
+                df_explore["Parental_Involvement"].unique()
+            )
             selected_involvement = st.multiselect(
                 "Filter by Parental Involvement",
                 options=involvement_options,
                 default=involvement_options,
             )
-            df_explore = df_explore[df_explore["Parental_Involvement"].isin(selected_involvement)]
+            df_explore = df_explore[
+                df_explore["Parental_Involvement"].isin(
+                    selected_involvement
+                )
+            ]
 
         st.subheader("Filtered Data")
         st.dataframe(df_explore, use_container_width=True)
@@ -284,10 +316,12 @@ if df is not None:
         st.write(
             "This is a **simple, data-inspired tool** that estimates a student's exam score "
             "based mainly on their study hours (and optionally sleep). "
-            "It’s not a full machine learning model, but it follows the patterns seen in the data."
+            "It’s not a full machine learning model, but it follows the" \
+            " patterns seen in the data."
         )
 
-        if "Hours_Studied" in df_clean.columns and "Exam_Score" in df_clean.columns:
+        if ("Hours_Studied" in df_clean.columns
+                and "Exam_Score" in df_clean.columns):
             # Fit a simple linear relationship: Exam_Score ~ Hours_Studied
             x = df_clean["Hours_Studied"].values
             y = df_clean["Exam_Score"].values
@@ -315,7 +349,11 @@ if df is not None:
                 with col2:
                     if "Sleep_Hours" in df_clean.columns:
                         sleep_vals = df_clean["Sleep_Hours"].dropna().values
-                        default_sleep = float(np.median(sleep_vals)) if len(sleep_vals) > 0 else 7.0
+                        default_sleep = (
+                            float(np.median(sleep_vals))
+                            if len(sleep_vals) > 0
+                            else 7.0
+                        )
                         user_sleep = st.number_input(
                             "Sleep Hours per Night",
                             min_value=0.0,
@@ -325,7 +363,10 @@ if df is not None:
                         )
                     else:
                         user_sleep = None
-                        st.info("Sleep_Hours not found in dataset, prediction will use study hours only.")
+                        st.info(
+                            "Sleep_Hours not found in dataset, "
+                            "prediction will use study hours only."
+                        )
 
                 if st.button("Estimate Score"):
                     base_pred = intercept + slope * user_hours
@@ -339,11 +380,15 @@ if df is not None:
                             base_pred -= 3  # small penalty
 
                     predicted_score = float(np.clip(base_pred, 0, 100))
-                    st.success(f"Estimated Exam Score: **{predicted_score:.1f} / 100**")
+                    score_text = (
+                        f"Estimated Exam Score: "
+                        f"**{predicted_score:.1f} / 100**"
+                    )
+                    st.success(score_text)
 
                     st.caption(
-                        "This is a rough estimate based on patterns in the dataset, "
-                        "not a guaranteed result."
+                        "This is a rough estimate based on patterns in "
+                        "the dataset, not a guaranteed result."
                     )
 
                 st.subheader("How the Model Sees Study Hours")
@@ -359,7 +404,10 @@ if df is not None:
             else:
                 st.info("Not enough data to build a predictor.")
         else:
-            st.info("Required columns (Hours_Studied and Exam_Score) are not available in the dataset.")
+            st.info(
+                "Required columns (Hours_Studied and Exam_Score) "
+                "are not available in the dataset."
+            )
 
     # -----------------------------
     # About
@@ -369,12 +417,19 @@ if df is not None:
         st.write("**Author:** Sadiyah")
         st.write("**Dataset:** Student Performance Factors (Kaggle)")
         st.write(
-            "This dashboard was built to explore what really affects exam scores, "
-            "with a focus on making insights clear, visual, and interactive."
+            "This dashboard was built to explore what really affects "
+            "exam scores, with a focus on making insights clear, "
+            "visual, and interactive."
         )
 
         st.markdown("---")
-        st.caption("Created as part of a data analytics project on student performance factors.")
+        st.caption(
+            "Created as part of a data analytics project on "
+            "student performance factors."
+        )
 
 else:
-    st.error("Data file not found! Please check your file paths in the repository.")
+    st.error(
+        "Data file not found! "
+        "Please check your file paths in the repository."
+    )
