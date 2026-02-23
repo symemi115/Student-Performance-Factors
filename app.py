@@ -166,8 +166,10 @@ if df is not None:
         st.subheader("Business Requirements")
         st.markdown(
             "- **BR1:** Identify the key drivers of student performance.\n"
-            "- **BR2:** Understand how study and sleep balance relate to exam scores.\n"
-            "- **BR3:** Provide a simple way to estimate a student’s potential score."
+            "- **BR2:** Understand how study and sleep "
+            "balance relate to exam scores.\n"
+            "- **BR3:** Provide a simple way to estimate a student’s "
+            "potential score."
         )
         st.subheader("Research Hypotheses")
         st.markdown(
@@ -314,9 +316,10 @@ if df is not None:
     elif page == "🔮 Score Predictor":
         st.header("Simple Score Predictor")
         st.write(
-            "This is a **simple, data-inspired tool** that estimates a student's exam score "
+            "This is a **simple, data-inspired tool** that "
+            " estimates a student's exam score "
             "based mainly on their study hours (and optionally sleep). "
-            "It’s not a full machine learning model, but it follows the" \
+            "It’s not a full machine learning model, but it follows the "
             " patterns seen in the data."
         )
 
