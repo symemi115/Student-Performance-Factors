@@ -10,7 +10,12 @@
 ![Heroku App Status](https://img.shields.io/website?url=https%3A%2F%2Fstudent-performance-dashboard-72e6c195af16.herokuapp.com%2F&label=App%20Status) 
 
 ##  **Live Dashboard**
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://student-performance-dashboard-72e6c195af16.herokuapp.com/)
+- STREAMLIT APP:
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://student-performance-dashboard-72e6c195af16.herokuapp.com/) 
+
+
+- POWER BI DASHBOARD:
+[![Power BI Dashboard](https://img.shields.io/badge/📊_Power_BI_Dashboard-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)](https://app.powerbi.com/groups/me/reports/6e3ad894-ec83-49f1-86ea-b9a2a2cc972d/1cedaa14094689e180ae?ctid=c233c072-135b-431d-af59-35e05babf941&experience=power-bi)
 
 ## Project Overview
 This data analytics project investigates the factors that influence student academic performance, specifically examining which variables most strongly predict exam scores. Using a comprehensive dataset of student attributes including study habits, attendance patterns, and lifestyle factors, this study tests four interconnected hypotheses about academic success.
@@ -224,6 +229,16 @@ Based on these findings, we recommend:
 | BR4: Generate Actionable Student Profiles | YES| Four distinct groups with clear performance differences |
 | BR5: Inform Educational Policy Recommendations | YES | 5 actionable recommendations provided |
 
+## PowerBI- Dashboard Screenshots
+
+### Page 1: Student overview Performance:
+![alt text](Images/Dashboard1.png)
+
+### Page 2: Students Habits and Exam practice:
+![alt text](Images/Dashboard2.png)
+
+### Page 3: Student Background Factors:
+![alt text](Images/Dashboard3.png)
 ## Skills Developed
 
 - **Statistical Analysis**: Hypothesis testing, regression analysis, ANOVA, correlation matrices
