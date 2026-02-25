@@ -17,6 +17,18 @@
 - POWER BI DASHBOARD:
 [![Power BI Dashboard](https://img.shields.io/badge/📊_Power_BI_Dashboard-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)](https://app.powerbi.com/groups/me/reports/6e3ad894-ec83-49f1-86ea-b9a2a2cc972d/1cedaa14094689e180ae?ctid=c233c072-135b-431d-af59-35e05babf941&experience=power-bi)
 
+## Table of Contents
+- [Project Overview](#project-overview)
+- [Live Demo](#live-demo)
+- [Business Requirements](#business-requirements)
+- [Research Questions](#research-questions--hypotheses)
+- [Dataset](#dataset)
+- [Methodology](#methodology)
+- [Key Findings](#key-findings)
+- [Recommendations](#actionable-recommendations)
+- [Ethical Approach](#ethical-approach)
+- [Acknowledgments](#acknowledgments)
+
 ## Project Overview
 This data analytics project investigates the factors that influence student academic performance, specifically examining which variables most strongly predict exam scores. Using a comprehensive dataset of student attributes including study habits, attendance patterns, and lifestyle factors, this study tests four interconnected hypotheses about academic success.
 ## Live Demo
@@ -80,7 +92,7 @@ Analytical Approach = Correlation Matrix Analysis.
 ## **DataSet**
 Source: Student Performance Factors (https://www.kaggle.com/datasets/lainguyn123/student-performance-factors) - Kaggle
 
-**Decsription**:  This dataset contains information on student demographics, study habits, parental involvement, and academic performance metrics.
+**Description**:  This dataset contains information on student demographics, study habits, parental involvement, and academic performance metrics.
 
 ***Key Features:***
 - Hours Studied
@@ -232,13 +244,13 @@ Based on these findings, we recommend:
 ## PowerBI- Dashboard Screenshots
 
 ### Page 1: Student overview Performance:
-![alt text](Images/Dashboard1.png)
+![Power BI Dashboard Page 1 showing exam score overview and attendance correlation](Images/Dashboard1.png)
 
 ### Page 2: Students Habits and Exam practice:
-![alt text](Images/Dashboard2.png)
+![Power BI Dashboard Page 2 showing extracurricular activities and physical activity analysis](Images/Dashboard2.png)
 
 ### Page 3: Student Background Factors:
-![alt text](Images/Dashboard3.png)
+![Power BI Dashboard Page 3 showing family income and parental education pie charts](Images/Dashboard3.png)
 ## Skills Developed
 
 - **Statistical Analysis**: Hypothesis testing, regression analysis, ANOVA, correlation matrices
