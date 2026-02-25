@@ -248,6 +248,30 @@ Based on these findings, we recommend:
 - **Web Deployment**: Heroku deployment, Git version control, README documentation
 - **Research Communication**: Presenting complex findings to diverse audiences
 
+## **Ethical Approach**
+When I started this project, I wanted to make sure I was handling student data responsibly. Here's how I thought about ethics throughout this analysis.
+
+### 1. Where the Data Came From
+
+I used a dataset from Kaggle called "Student Performance Factors." It's publicly available and has a **CC0 license**, which means the person who shared it has waived all their rights. This gave me confidence that I wasn't stepping on anyone's toes by using it.
+
+### 2. Privacy Matters
+
+The first thing I checked was whether any individual student could be identified. I was relieved to find **no names, no IDs, no addresses** just general categories like "High" or "Medium" for family income, and scores without any student attached to them. So while the data tells us about patterns, it protects the privacy of real students.
+
+### 3. Being Honest About What I Found
+
+I tried really hard not to overclaim. When I say things like "study hours predict exam scores," I know that's different from saying "study hours *cause* higher scores." There could be other factors at play like motivation or natural ability that I couldn't measure. My dashboards and README are careful to show **correlations, not certainties**.
+
+### 4. Avoiding Harmful Takeaways
+
+This was important to me. I didn't want anyone reading this to think "if you don't study 20+ hours, you'll fail." That's not true, and that's not the message. Instead, I focused on patterns and possibilities—like how attendance makes studying more effective. The recommendations are about **supporting students**, not blaming them.
+
+### 5. Why I Built This
+
+At its heart, this project is about understanding what helps students succeed. I wanted to create something that teachers, parents, and even students themselves could use to have better conversations about learning. Not to label anyone, but to find ways to help.
+
+
 ## **Acknowledgments**
 **Dataset:**
 - Source: [Student Performance Factors Dataset](https://www.kaggle.com/datasets/lainguyn123/student-performance-factors) on Kaggle
