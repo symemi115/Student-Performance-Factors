@@ -8,6 +8,7 @@
 ![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white)
 ![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)
 ![Heroku App Status](https://img.shields.io/website?url=https%3A%2F%2Fstudent-performance-dashboard-72e6c195af16.herokuapp.com%2F&label=App%20Status) 
+![Project Status](https://img.shields.io/badge/Status-Completed-success?style=for-the-badge)
 
 ##  **Live Dashboard**
 - STREAMLIT APP:
@@ -77,7 +78,7 @@ This data analytics project investigates the factors that influence student acad
 - Hours studied explains more variance in exam scores than attendance rate or sleep hours when analyzed separately.
 Analytical Approach = Simple linear Regression
 
-#### **H2: 2: Combined Effects**
+#### **H2: Combined Effects**
 - The combination of hours studied AND attendance rate predicts exam scores better than either variable alone.
 Analyticial Approach = Multiple regression with interaction.
 
